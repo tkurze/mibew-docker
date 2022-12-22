@@ -27,6 +27,7 @@ services:
             - ./mibew-config/plugins:/var/www/html/mibew/plugins
             - ./mibew-config/locales:/var/www/html/mibew/locales
     cron:
+        restart: always
         depends_on:
             - db
         build:
