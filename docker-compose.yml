@@ -12,9 +12,10 @@ services:
         build:
             context: .
             args:
-                MIBEW_VERSION: 3.5.4
-                MIBEW_SHA1: ebb925df2ebeb31cc8b945f9f57ff7c222863be9
-                MIBEW_DE_SHA1: 468d86103f4a398cdcda651b2a40687142af5e5d
+
+                MIBEW_VERSION: 3.5.7
+                MIBEW_SHA1: b511aed34e22ed97752e0185997cee79daacd4f7
+                MIBEW_DE_SHA1: 5f9c6053560b72a3f06d626a6bd83af9a2cce37e
         restart: always
         depends_on:
             - db
@@ -27,6 +28,7 @@ services:
             - ./mibew-config/plugins:/var/www/html/mibew/plugins
             - ./mibew-config/locales:/var/www/html/mibew/locales
     cron:
+        restart: always
         depends_on:
             - db
         build:
